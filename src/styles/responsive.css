@@ -1,0 +1,103 @@
+/* 移动优先的响应式设计 */
+
+/* 基础样式 - 移动端 */
+html {
+  font-size: 16px;
+}
+
+/* 平板 */
+@media (min-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+}
+
+/* 小型桌面 */
+@media (min-width: 960px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* 中型桌面 */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* 大型桌面 */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+
+/* 响应式网格系统 */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* 响应式布局类 */
+.hide-xs {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .hide-xs {
+    display: initial;
+  }
+  .hide-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .hide-sm {
+    display: initial;
+  }
+  .hide-md {
+    display: none;
+  }
+}
+
+/* 响应式间距 */
+.spacing {
+  padding: var(--spacing-sm);
+}
+
+@media (min-width: 600px) {
+  .spacing {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (min-width: 960px) {
+  .spacing {
+    padding: var(--spacing-lg);
+  }
+} 

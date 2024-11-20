@@ -1,0 +1,38 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "loading": "Loading...",
+    "error": "Error"
+  },
+  "chart": {
+    "noData": "No data available",
+    "loading": "Loading chart...",
+    "error": "Failed to load chart",
+    "export": {
+      "title": "Export Chart",
+      "success": "Chart exported successfully",
+      "error": "Failed to export chart"
+    }
+  },
+  "backup": {
+    "create": {
+      "title": "Create Backup",
+      "success": "Backup created successfully",
+      "error": "Failed to create backup"
+    },
+    "restore": {
+      "title": "Restore Backup",
+      "success": "Backup restored successfully",
+      "error": "Failed to restore backup"
+    },
+    "delete": {
+      "title": "Delete Backup",
+      "confirm": "Are you sure you want to delete this backup?",
+      "success": "Backup deleted successfully",
+      "error": "Failed to delete backup"
+    }
+  }
+} 

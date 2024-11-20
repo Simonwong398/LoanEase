@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+.grid-spacing-1 { gap: 8px; }
+.grid-spacing-2 { gap: 16px; }
+.grid-spacing-3 { gap: 24px; }
+.grid-spacing-4 { gap: 32px; }
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 601px) and (max-width: 960px) {
+  .grid { grid-template-columns: repeat(8, 1fr); }
+}
+
+@media (min-width: 961px) {
+  .grid { grid-template-columns: repeat(12, 1fr); }
+} 

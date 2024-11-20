@@ -1,0 +1,45 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DEPLOY_PATH: /opt/loanease
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build
+      run: npm run build
+
+    - name: Deploy to server
+      uses: appleboy/ssh-action@master
+      env:
+        DEPLOY_HOST: ${{ 18.191.116.109 }}
+        DEPLOY_USER: ${{ ec2-user }}
+        DEPLOY_KEY: ${{ Sh(9192aa) }}
+      with:
+        host: ${{ env.DEPLOY_HOST }}
+        username: ${{ env.DEPLOY_USER }}
+        key: ${{ env.DEPLOY_KEY }}
+        script: |
+          cd ${{ env.DEPLOY_PATH }}
+          docker-compose pull
+          docker-compose up -d

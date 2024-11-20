@@ -1,0 +1,39 @@
+name: Monitoring
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    environment: production
+
+    env:
+      API_URL: ${{ http://localhost:3000 }}
+      DB_URL: ${{ mongodb://localhost:27017/mydatabase }}
+      WEBHOOK_URL: ${{ https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX}}
+
+    steps:
+    - name: Check API health
+      uses: jtalk/url-health-check-action@v3
+      with:
+        url: ${{ env.API_URL }}
+        max-attempts: 3
+        retry-delay: 5s
+
+    - name: Check database connection
+      uses: jtalk/url-health-check-action@v3
+      with:
+        url: ${{ env.DB_URL }}
+        max-attempts: 3
+        retry-delay: 5s
+
+    - name: Send notification on failure
+      if: failure()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ env.WEBHOOK_URL }}
+        SLACK_COLOR: 'danger'
+        SLACK_MESSAGE: 'Health check failed!' 

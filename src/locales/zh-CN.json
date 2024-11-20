@@ -1,0 +1,38 @@
+{
+  "common": {
+    "ok": "确定",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "loading": "加载中...",
+    "error": "错误"
+  },
+  "chart": {
+    "noData": "暂无数据",
+    "loading": "图表加载中...",
+    "error": "图表加载失败",
+    "export": {
+      "title": "导出图表",
+      "success": "图表导出成功",
+      "error": "图表导出失败"
+    }
+  },
+  "backup": {
+    "create": {
+      "title": "创建备份",
+      "success": "备份创建成功",
+      "error": "备份创建失败"
+    },
+    "restore": {
+      "title": "恢复备份",
+      "success": "备份恢复成功",
+      "error": "备份恢复失败"
+    },
+    "delete": {
+      "title": "删除备份",
+      "confirm": "确定要删除此备份吗？",
+      "success": "备份删除成功",
+      "error": "备份删除失败"
+    }
+  }
+} 

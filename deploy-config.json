@@ -1,0 +1,14 @@
+{
+  "production": {
+    "host": "18.191.116.109",
+    "user": "ec2-user",
+    "path": "/opt/loanease",
+    "port": "22"
+  },
+  "staging": {
+    "host": "staging.example.com",
+    "user": "deploy",
+    "path": "/var/www/staging",
+    "port": "22"
+  }
+} 

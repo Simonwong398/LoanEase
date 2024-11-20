@@ -1,0 +1,86 @@
+/* 淡入淡出 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* 滑动 */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 缩放 */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 旋转 */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 骨架屏动画 */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* 动画类 */
+.fade-enter {
+  animation: fadeIn var(--transition-duration) var(--transition-timing);
+}
+
+.fade-exit {
+  animation: fadeOut var(--transition-duration) var(--transition-timing);
+}
+
+.slide-up {
+  animation: slideInUp var(--transition-duration) var(--transition-timing);
+}
+
+.slide-down {
+  animation: slideInDown var(--transition-duration) var(--transition-timing);
+}
+
+.zoom-in {
+  animation: zoomIn var(--transition-duration) var(--transition-timing);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+} 
