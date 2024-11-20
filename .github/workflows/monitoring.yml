@@ -11,9 +11,9 @@ jobs:
     environment: production
 
     env:
-      API_URL: ${{ http://localhost:3000 }}
-      DB_URL: ${{ mongodb://localhost:27017/mydatabase }}
-      WEBHOOK_URL: ${{ https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX}}
+      API_URL: ${{ secrets.SERVER_API_URL }}
+      DB_URL: ${{ secrets.SERVER_DB_URL }}
+      WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
     steps:
     - name: Check API health
@@ -36,4 +36,4 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ env.WEBHOOK_URL }}
         SLACK_COLOR: 'danger'
-        SLACK_MESSAGE: 'Health check failed!' 
+        SLACK_MESSAGE: 'Health check failed!'
