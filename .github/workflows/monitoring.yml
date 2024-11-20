@@ -37,3 +37,4 @@ jobs:
         SLACK_WEBHOOK: ${{ env.WEBHOOK_URL }}
         SLACK_COLOR: 'danger'
         SLACK_MESSAGE: 'Health check failed!'
+
