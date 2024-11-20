@@ -32,13 +32,13 @@ jobs:
     - name: Deploy to server
       uses: appleboy/ssh-action@master
       env:
-        DEPLOY_HOST: ${{ 18.191.116.109 }}
-        DEPLOY_USER: ${{ ec2-user }}
-        DEPLOY_KEY: ${{ Sh(9192aa) }}
+        DEPLOY_HOST: ${{ secrets.SERVER_HOST }}
+        DEPLOY_USER: ${{ secrets.SERVER_USER }}
+        DEPLOY_KEY: ${{ secrets.SERVER_SSH_KEY }}
       with:
-        host: ${{ env.DEPLOY_HOST }}
-        username: ${{ env.DEPLOY_USER }}
-        key: ${{ env.DEPLOY_KEY }}
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
           cd ${{ env.DEPLOY_PATH }}
           docker-compose pull
